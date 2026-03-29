@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #ff4757;
+  --color-brand-secondary: #2f3542;
+  --color-brand-accent: #ffa502;
+  --color-brand-bg: #f1f2f6;
+
+  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+}
+
+:root {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-secondary);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom transitions */
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
