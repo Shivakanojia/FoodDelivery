@@ -3,7 +3,7 @@ import axios from "axios";
 const axiosInstance = axios.create({
   baseURL: import.meta.env.MODE === "development" 
     ? "http://localhost:5000/api" 
-    : "https://fooddelivery-1-fh7g.onrender.com/api",
+    : "/api",
 });
 
 // 🔐 Attach token automatically (if present)

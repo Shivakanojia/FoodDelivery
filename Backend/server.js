@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 const connectDB = require("./config/db");
@@ -27,9 +28,11 @@ app.use("/api/foods", foodRoutes);
 app.use("/api/cart", cartRoutes);
 app.use("/api/orders", orderRoutes);
 
-// ================= TEST ROUTE =================
-app.get("/", (req, res) => {
-res.send("Food Delivery API is running...");
+// ================= SERVE FRONTEND =================
+app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../Frontend/dist", "index.html"));
 });
 
 // ================= START SERVER =================
